@@ -1,0 +1,57 @@
+<html>
+
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+		<script src="bitcoin.js"></script>
+		<style>
+			body { background: #333; color: #fff; font: 0.875em/1.45em Arial; padding: 50px 100px; }
+			h1 { color: yellow; font-size: 3em; }
+			span { background: #666; font-weight: bold; border-radius: 3px; padding: 0 5px; border: 1px solid #999; }
+			article { border-bottom: 5px solid #666; }
+			p { padding-bottom: 15px; }
+			article p { padding-bottom: 0; }
+			article em { font-size: 1.5em; color: #777; font-style: normal; }
+			section p { border-bottom: 1px dotted #666; }
+		</style>
+
+	</head>
+
+	<body>
+
+		<h1>Bitcoin-to-Dollar Converter</h1>
+
+		<article>
+			<p class="intro"><em>What is it?:</em><br/>Here's an easy and quick way to dynamically display the current value of bitcoins. Simply create a SPAN tag and give the tag a data attribute of "data-bitcoin-value", and give that attribute a value of the number of bitcoins you'd like to convert to USD.</p>
+			<p><em>Syntax:</em><br/>
+				<strong>&lt;span data-bitcoin-value='100'&gt;&lt;/span&gt;</strong>
+			</p>
+			<p><em>How it works:</em><br/>
+				Using jQuery's $.getJason function, the current value of a bitcoin is read from MtGox's ticker_fast API. Once the bitcoin value is read, all instances of &lt;span data-bitcoin-value='100'&gt;&lt;/span&gt; will then be injected with the caluclated value of the bitcoin. It's entirely done dynamically.
+			</p>
+
+			<p><em>Hot to use it:</em><br/>
+				<ol>
+					<li>Call jQuery</li>
+					<li>Call bitcoin.js</li>
+					<li>Create the span tag using the syntax above.</li>
+				</ol>
+
+			<p><em>Who can use this:</em><br/>
+				This plugin was created with bloggers in mind. Instead of hardcoding the USD value of a bitcoin at the time the article was written, bloggers can now dynamically display the current value of bitcoins by adding a simple span tag within their article. See examples below on how those articles could have used this plugin.
+			</p>
+
+		</article>
+
+		<section>
+			<p>The current value of 1 BTC = <span data-bitcoin-value="1"></span>.</p>
+
+			<p><em>From Newser.com:</em><br/>"(NEWSER) - What can you actually pay for in Bitcoins? Well, at the moment, the list appears to include a luxury condo in New York City. A one-bedroom apartment in the Trump SoHo building went up for sale yesterday for 20,874 BTC, which is to say just over $1.9 million (currently valued at: <span data-bitcoin-value="20874"></span>). "I prefer to own Bitcoin to property," the owner explains to Business Insider. "I think property is a better asset class than USD, and Bitcoin a better asset class than property."</p>
+
+			<p><em>From Business Insider:</em><br/>"As Internet lore has it, on May 18, 2010, Jacksonville resident Laszlo Hanyecz announced on Bitcointalk.org he would pay someone 10,000 BTC to order him two pizzas. At that time, 10,000 Bitcoin was worth $25 (currently valued at: <span data-bitcoin-value="10000"></span>)."</p>
+
+			<p><em>From Gizmodo:</em><br/>"Back in 2009, Koch was working on a thesis paper about encryption, which introduced him to the relatively unknown world of Bitcoin. On little more than a whim, he decided to throw down $27 for 5,000 Bitcoins (currently valued at: <span data-bitcoin-value="5000"></span>) because the encryption process fascinated him and because why not. Koch then promptly forgot about the purchase - until Bitcoin started popping up in the news four years later, that is."</p>
+		</section>
+
+	</body>
+
+</html>
